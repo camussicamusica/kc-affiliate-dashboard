@@ -19,6 +19,29 @@ for (const button of filters) {
   });
 }
 
+const answerDetails = [...document.querySelectorAll('.answer-detail')];
+document.getElementById('expand-all').addEventListener('click', () => {
+  filters.find(button => button.dataset.filter === 'all').click();
+  for (const detail of answerDetails) detail.open = true;
+});
+document.getElementById('collapse-all').addEventListener('click', () => {
+  for (const detail of answerDetails) detail.open = false;
+});
+
+let stateBeforePrint;
+window.addEventListener('beforeprint', () => {
+  const details = [...document.querySelectorAll('details')];
+  stateBeforePrint = details.map(detail => detail.open);
+  for (const detail of details) detail.open = true;
+});
+window.addEventListener('afterprint', () => {
+  if (!stateBeforePrint) return;
+  document.querySelectorAll('details').forEach((detail, i) => {
+    detail.open = stateBeforePrint[i];
+  });
+  stateBeforePrint = undefined;
+});
+
 // Close the "More for KC" menu on outside click or Escape.
 const kcMenu = document.querySelector('.kc-menu');
 if (kcMenu) {

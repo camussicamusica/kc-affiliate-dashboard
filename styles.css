@@ -18,6 +18,53 @@
 .question-card .expanded-body .detail-note{margin-top:18px;padding:14px 16px;background:#eff5d5;color:var(--ink);border-left:3px solid #a6bd46;font-weight:600}
 .question-card:has(.answer-detail[open]){border-color:#87948b}
 
+/* Full research keeps the short answer visible and gives open answers reading room. */
+.question-card:has(.answer-detail[open]){grid-column:1 / -1}
+.question-card:has(.answer-detail[open])>h3,.question-card:has(.answer-detail[open])>p{max-width:850px}
+.expanded-body{max-width:900px}
+.expanded-body h4{font-family:Manrope,Arial,sans-serif;font-size:19px;letter-spacing:-.025em;margin:28px 0 12px;line-height:1.35}
+.expanded-body h4:first-child{margin-top:0}
+.expanded-body ul,.expanded-body ol{padding-left:23px;margin:0 0 22px;color:#455151;font-size:14px;line-height:1.7}
+.expanded-body li{margin:0 0 13px;padding-left:4px}
+.expanded-body strong{color:var(--ink)}
+.inline-cites{font-size:11px;font-weight:700;white-space:normal}
+.inline-cites a{white-space:nowrap;text-decoration:underline;text-underline-offset:3px;color:#52641b}
+.question-card .expanded-body .call-origin{font-size:12px;color:var(--muted);margin-top:25px}
+.research-legend{margin:0 0 25px;border-top:1px solid var(--line);padding:20px 0 0}
+.research-legend>p{max-width:900px;color:#455151;font-size:14px;line-height:1.65;margin-bottom:18px}
+.reading-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.reading-controls button,.reading-controls>a{font:700 12px 'DM Sans',Arial,sans-serif;padding:11px 14px;border:1px solid var(--ink);border-radius:3px;background:var(--white);color:var(--ink);text-decoration:none}
+.reading-controls button:hover,.reading-controls>a:hover{background:var(--lime)}
+.card-sources{border-top:1px solid var(--line);padding-top:15px;margin-top:auto}
+.card-sources h4{font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 9px;color:var(--muted)}
+.source-chips{display:flex;flex-wrap:wrap;gap:7px 15px}
+.source-chips a{font-size:11px;line-height:1.5;text-underline-offset:3px;color:#465257}
+.source-chips a:hover{color:#b94930}
+.research-table-wrap{overflow-x:auto;margin:20px 0 25px}
+.research-table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.6;text-align:left}
+.research-table caption{text-align:left;color:var(--muted);font-size:12px;padding:0 0 10px}
+.research-table th,.research-table td{vertical-align:top;padding:13px 15px;border-bottom:1px solid var(--line);min-width:130px}
+.research-table th{color:var(--ink);background:#eef0e6;font-size:12px}
+.research-table td{color:#455151}
+.research-notes{padding-bottom:90px}
+.research-notes h2{font-size:clamp(32px,3.5vw,48px);letter-spacing:-.06em}
+.research-note{border-top:1px solid var(--line);padding:0 0 4px}
+.research-note:last-child{border-bottom:1px solid var(--line)}
+.research-note>summary{cursor:pointer;font-weight:700;font-size:16px;padding:20px 0}
+.research-note>p{max-width:900px;font-size:14px;color:#455151;line-height:1.7}
+.full-sources{display:block}
+.source-intro{max-width:850px;font-size:14px;line-height:1.7;color:#455151}
+.source-register{list-style:none;margin:35px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 35px}
+.source-register li{display:flex;align-items:flex-start;gap:15px;padding:22px 0;border-top:1px solid var(--line);scroll-margin-top:24px}
+.source-register li:target{background:#eff5d5;box-shadow:0 0 0 12px #eff5d5}
+.source-id{font-family:Manrope,Arial,sans-serif;font-size:12px;font-weight:800;min-width:28px;color:#52641b;padding-top:3px}
+.source-register li>div{min-width:0}
+.source-register a,.source-register strong{font-size:14px;font-weight:700;line-height:1.5;overflow-wrap:anywhere;text-underline-offset:3px}
+.source-kind{display:block;font-size:11px;font-weight:600;line-height:1.6;color:#66716a;margin-top:6px}
+.source-register p{font-size:12px;line-height:1.65;color:#455151;margin:9px 0 0}
+@media(max-width:650px){.source-register{grid-template-columns:1fr}.expanded-body h4{font-size:17px}.research-table th,.research-table td{padding:10px;min-width:115px}.card-tag{white-space:normal;text-align:right;max-width:70%}.research-notes{padding-bottom:65px}}
+@media print{.hero-art,.top-nav,.filter-bar,.reading-controls,.hero-actions,.skip-link{display:none}.hero{min-height:0;display:block}.hero-copy{padding:25px 0}.answers-section,.needed-section{padding:35px 0}.question-grid,.asks-grid,.source-register{display:block}.question-card{margin-bottom:20px;box-shadow:none!important;transform:none!important;break-inside:auto}.question-card[hidden]{display:block}.source-register li{break-inside:avoid}.page-shell{max-width:none;padding:0}.source-chips a{color:inherit}}
+
 /* "More for KC" menu: links to KC's other published pages. */
 .top-nav{align-items:center}
 .kc-menu{position:relative}
